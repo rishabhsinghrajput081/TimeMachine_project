@@ -100,7 +100,7 @@ const GlobeComponent = () => {
         pointsData={[
           { name: "India", lat: 20.5937, lng: 78.9629, info: "India: A country in South Asia." },
           { name: "USA", lat: 37.0902, lng: -95.7129, info: "USA: A country in North America." },
-          { name: "Brazil", lat: -14.2350, lng: -51.9253, info: "Brazil: The largest country in South America." },
+          { name: "Brazil", lat: -14.2350, lng: -51.9253, info: "Brazil: The largest country in South America1." },
           { name: "Germany", lat: 51.1657, lng: 10.4515, info: "Germany: A country in Central Europe." },
           { name: "UK", lat: 55.3781, lng: -3.4360, info: "United Kingdom: A country in Europe made up of England, Scotland, Wales, and Northern Ireland." },
           { name: "Russia", lat: 61.5240, lng: 105.3188, info: "Russia: The largest country in the world, located in Eastern Europe and Northern Asia." },

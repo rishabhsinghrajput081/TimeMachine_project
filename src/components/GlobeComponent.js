@@ -30,46 +30,11 @@ const GlobeComponent = () => {
       globeEl.current.renderer().setClearColor('black');
 
       // Create a pulsing ring effect
-      createPulsingRingEffect();
+      //createPulsingRingEffectWithImage();
     }
   }, []);
 
-  const createPulsingRingEffect = () => {
-    const globe = globeEl.current;
-
-    // Create a ring geometry to animate
-    const ringGeometry = new THREE.RingGeometry(0.1, 0.15, 64); // Inner radius, outer radius, and segments
-    const ringMaterial = new THREE.MeshBasicMaterial({
-      color: 0xffff00,
-      opacity: 0.5,
-      transparent: true,
-    });
-
-    const ring = new THREE.Mesh(ringGeometry, ringMaterial);
-    ring.position.set(0, 0, 1); // Position the ring slightly above the globe
-
-    // Add ring to the globe scene
-    globe.scene().add(ring);
-
-    let scale = 1;
-    let growing = true;
-
-    const animateRing = () => {
-      if (growing) {
-        scale += 0.01;
-        if (scale > 1.5) growing = false;
-      } else {
-        scale -= 0.01;
-        if (scale < 1) growing = true;
-      }
-
-      ring.scale.set(scale, scale, scale);
-      requestAnimationFrame(animateRing);
-    };
-
-    animateRing();
-  };
-
+  
   const handleYearClick = (year) => {
     setSelectedYear(year);
     // Play the click sound when a year is selected
@@ -113,13 +78,16 @@ const GlobeComponent = () => {
           { name: "Mexico", lat: 23.6345, lng: -102.5528, info: "Mexico: A country in North America known for its rich cultural heritage." },
           { name: "South Africa", lat: -30.5595, lng: 22.9375, info: "South Africa: A country on the southernmost tip of Africa." },
           { name: "Egypt", lat: 26.8206, lng: 30.8025, info: "Egypt: A country in North Africa, famous for its ancient civilization." },
-          { name: "Iran", lat: 32.4279, lng: 53.6880, info: "Iran: A country in Western Asia known for its historical and cultural significance." }
+          { name: "Iran", lat: 32.4279, lng: 53.6880, info: "Iran: A country in Western Asia known for its historical and cultural significance." },
+          { name: "Canada", lat: 56.1304, lng: -106.3468, info: "Canada: The second-largest country in the world, known for its natural landscapes, multicultural cities, and friendly people." }
+        
         ]}
         
         pointLat={(d) => d.lat}
         pointLng={(d) => d.lng}
-        pointAltitude={0.05}
+        pointAltitude={0.00}
         pointRadius={0.3}
+        pointColor={() => "#E50914"}
         onPointClick={handlePointClick}
       />
 

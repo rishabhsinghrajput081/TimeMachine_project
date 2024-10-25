@@ -1,6 +1,7 @@
 .globe-container {
-  background-color: #000;
+  background-color:rgb(1, 1, 16);
 }
+
 
 /* GlobeComponent.css */
 
@@ -13,7 +14,7 @@
   overflow-x: auto;
   white-space: nowrap;
   padding: 10px 0;
-  background-color: black; /* Background color of the timeline */
+  background-color:rgb(1, 1, 16); /* Background color of the timeline */
   border-radius: 5px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -47,7 +48,7 @@
 
 /* Selected year styling */
 .timeline-point.selected {
-  background-color: blue; /* Color for the selected point */
+  background-color: rgb(1, 1, 16); /* Color for the selected point */
 }
 
 /* Year label below each point */
@@ -63,10 +64,10 @@
 }
 
 .scrollable-timeline-container::-webkit-scrollbar-thumb {
-  background-color: black; /* Color of the scrollbar thumb */
+  background-color: rgb(1, 1, 16); /* Color of the scrollbar thumb */
   border-radius: 5px;
 }
 
 .scrollable-timeline-container::-webkit-scrollbar-track {
-  background-color: black; /* Background of the scrollbar track */
+  background-color: rgb(1, 1, 16); /* Background of the scrollbar track */
 }

@@ -9,7 +9,7 @@ const GlobeComponent = () => {
   const [selectedYear, setSelectedYear] = useState(1934);
   const [globeWidth, setGlobeWidth] = useState(window.innerWidth);
 
-  // Handle window resizing
+  // Handle window resizinga
   useEffect(() => {
     const handleResize = () => {
       setGlobeWidth(window.innerWidth);
@@ -27,7 +27,10 @@ const GlobeComponent = () => {
     if (globeEl.current) {
       globeEl.current.controls().autoRotate = true;
       globeEl.current.controls().autoRotateSpeed = 0.2;
-      globeEl.current.renderer().setClearColor('black');
+      globeEl.current.renderer().setClearColor('rgba(0, 0, 0, 0)');
+
+
+
 
       // Create a pulsing ring effect
       //createPulsingRingEffectWithImage();
@@ -175,7 +178,7 @@ const ScrollableTimeline = ({ onYearClick, selectedYear }) => {
         overflowX: 'auto',
         whiteSpace: 'nowrap',
         padding: '10px 0',
-        backgroundColor: 'black',
+        backgroundColor: 'rgb(1, 1, 16)', 
         borderRadius: '5px',
       }}
       ref={timelineRef} // Reference to the timeline container

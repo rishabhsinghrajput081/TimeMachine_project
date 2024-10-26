@@ -35,7 +35,13 @@ const GlobeComponent = () => {
       // Create a pulsing ring effect
       //createPulsingRingEffectWithImage();
     }
+
+   
+
+
   }, []);
+
+  
 
   
   const handleYearClick = (year) => {
@@ -53,16 +59,20 @@ const GlobeComponent = () => {
     audio.play().catch((err) => {
       console.error('Audio play failed:', err); // Handle any potential errors gracefully
     });
+
+    
   };
   return (
     <div 
       className="globe-container"
       style={{ height: '100vh', position: 'relative' }}
     >
+      
       <Globe
         ref={globeEl}
         width={globeWidth}
-        height={window.innerHeight * 0.75}
+        height={window.innerWidth < 768 ? window.innerHeight * 0.5 : window.innerHeight * 0.75} // Adjusts for mobile
+
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
         bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
         pointsData={[
@@ -89,7 +99,10 @@ const GlobeComponent = () => {
         pointLat={(d) => d.lat}
         pointLng={(d) => d.lng}
         pointAltitude={0.00}
-        pointRadius={0.3}
+        pointRadius={0.9}
+        labelText={(d) => d.name}  
+        
+       
         pointColor={() => "#E50914"}
         onPointClick={handlePointClick}
       />
@@ -172,7 +185,7 @@ const ScrollableTimeline = ({ onYearClick, selectedYear }) => {
       className="scrollable-timeline-container"
       style={{
         position: 'absolute',
-        bottom: '10%',
+        bottom: '5%',
         left: '5%',
         right: '5%',
         overflowX: 'auto',
@@ -224,7 +237,8 @@ const ScrollableTimeline = ({ onYearClick, selectedYear }) => {
             <div
               style={{
                 marginTop: '5px',
-                fontSize: '12px',
+                fontSize: window.innerWidth < 768 ? '10px' : '12px', // Adjusted for mobile
+
                 color: year === selectedYear ? 'white' : 'gray',
               }}
             >

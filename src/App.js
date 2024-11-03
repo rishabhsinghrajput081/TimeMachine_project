@@ -10,9 +10,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      {/*<GlobeComponent /> */}
+      <GlobeComponent /> 
 
-      <Jurrasic/> 
+      {/*<Jurrasic/> */}
       {/*<WorldWar1/> */}
       {/*<WorldWar2/> */}
     </div>

@@ -1,0 +1,77 @@
+
+
+.globe-container {
+  background-color:rgb(1, 1, 16);
+}
+
+
+
+
+/* GlobeComponent.css */
+
+/* Container for the scrollable timeline */
+.scrollable-timeline-container {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  right: 5%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+  background-color:rgb(1, 1, 16); /* Background color of the timeline */
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Line running horizontally along the timeline */
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  background-color: white; /* Color of the timeline line */
+  z-index: -1; /* Make sure it's behind the points */
+}
+
+/* Scroll area containing the timeline points */
+.timeline-scroll {
+  display: flex;
+  gap: 20px; /* Spacing between timeline points */
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Individual timeline points */
+.timeline-point {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white; /* Default point color */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Selected year styling */
+.timeline-point.selected {
+  background-color: rgb(1, 1, 16); /* Color for the selected point */
+}
+
+/* Year label below each point */
+.timeline-scroll > div > div:last-child {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #333; /* Color of the year text */
+}
+
+/* Scrollbar customization */
+.scrollable-timeline-container::-webkit-scrollbar {
+  height: 8px; /* Height of the scrollbar */
+}
+
+.scrollable-timeline-container::-webkit-scrollbar-thumb {
+  background-color: rgb(1, 1, 16); /* Color of the scrollbar thumb */
+  border-radius: 5px;
+}
+
+.scrollable-timeline-container::-webkit-scrollbar-track {
+  background-color: rgb(1, 1, 16); /* Background of the scrollbar track */
+}

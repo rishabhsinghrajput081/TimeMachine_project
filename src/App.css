@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.h1 {
+  margin: 20px;
+}
+
+body {
+  background-color: #010015; /* Set the background color */
+  margin: 0; /* Remove default margin */
+  height: 100vh; /* Ensure body takes full height */
+}
+
+.App {
+  position: relative; /* Enable absolute positioning for child elements */
+  overflow: hidden;   /* Hide overflow to avoid scrollbars */
+}

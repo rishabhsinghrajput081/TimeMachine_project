@@ -1,0 +1,32 @@
+.global-map {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Adjust to your needs */
+    margin: auto;
+    
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.map-point {
+    position: absolute;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+}
+
+.map-point:hover {
+    background-color: darkred;
+}
+
+

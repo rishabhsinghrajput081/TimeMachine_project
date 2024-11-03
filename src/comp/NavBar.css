@@ -1,0 +1,229 @@
+/* NavBar.css */
+.navbar {
+    position: absolute;   /* Keep it positioned above the video */
+    top: 10px;               /* Align to the top */
+    left: 0;              /* Align to the left */
+    width: 100%;          /* Full width */
+    background-color: rgba(0, 0, 0, 0); /* Keep the transparent background */
+    color: white;         /* Text color */
+    padding: 1rem;        /* Padding around the navbar */
+    z-index: 10;          /* Ensure it's on top of the video */
+}
+
+.nav-container {
+    position: relative;   /* Ensure relative positioning for absolute child elements */
+    width: 100%;
+    max-width: 1390px;    /* Optional: max width to keep the navbar from stretching too much */
+    margin: 0 auto;       /* Center the container */
+}
+
+/* Globe icon (Left, top corner) */
+.nav-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;       /* Icon color */
+    text-decoration: none;
+}
+
+.nav-logo .icon {
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.3s; /* Smooth transition for hover */
+}
+
+.nav-logo .icon:hover {
+    color: #ffcc00;     /* Change color on hover */
+}
+
+/* Search icon (Center) */
+.nav-search {
+    text-align: center;
+    margin: 0 auto;     /* Center align in the middle */
+}
+
+.nav-search .icon {
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav-search .icon:hover {
+    color: #ffcc00;     /* Change color on hover */
+}
+
+/* Menu icon (Right, top corner) */
+.nav-menu {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+}
+
+.nav-menu .icon {
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav-menu .icon:hover {
+    color: #ffcc00;     /* Change color on hover */
+}
+
+/* Sliding Menu */
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 40px; /* Position from the top */
+    right: 20px; /* Position from the right */
+    color: white; /* Close icon color */
+    font-size: 24px; /* Icon size */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.close-button:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+
+.slide-in-menu {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Start off-screen */
+    width: 400px; /* Width of the menu */
+    height: 100vh;
+    background-color: rgba(30, 30, 30, 0.9); /* Dark background */
+    color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    transition: right 0.3s ease; /* Smooth slide effect */
+    z-index: 110; /* Ensure it appears above other content */
+}
+
+/* Active class to slide in */
+.slide-in-menu.active {
+    right: 0; /* Slide in */
+}
+
+/* Menu content styling */
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    padding: 20px; /* Add padding */
+}
+
+
+
+/* Menu items styling */
+.menu-content ul {
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Full width */
+}
+
+.menu-content li {
+    width: 100%; /* Full width for each item */
+    margin: 10px 0; /* Margin between items */
+}
+
+.menu-content a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+    display: block; /* Make link take full width */
+}
+
+/* Menu options */
+.menu-content a:nth-child(1) { content: "MAP"; }
+.menu-content a:nth-child(2) { content: "Historical Figures"; }
+.menu-content a:nth-child(3) { content: "World War 1"; }
+.menu-content a:nth-child(4) { content: "World War 2"; }
+.menu-content a:nth-child(5) { content: "The Dinosaur Era (Mesozoic Era)"; }
+
+/* Change background on hover */
+.menu-content a:hover {
+    background-color: rgba(255, 204, 0, 0.5); /* Change background on hover */
+}
+
+/* Search Overlay */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Translucent matte finish */
+    z-index: 100; /* Ensure it's above everything */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Back Button (Top-left corner) */
+.back-button {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Search Box */
+.search-box {
+    width: 70%;
+    height: 50px;
+    max-width: 800px;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly translucent white */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 101; /* Ensure it stays above the overlay */
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: black;
+}
+
+.search-input::placeholder {
+    color: #888; /* Placeholder text color */
+}
+
+/* Close overlay when clicking outside */
+.overlay-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Start off-screen */
+    width: 400px; /* Width of the menu */
+    height: 100vh;
+    background-color: rgba(30, 30, 30, 0.9); /* Dark background */
+    color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    transition: right 0.3s ease; /* Smooth slide effect */
+    z-index: 110; /* Ensure it appears above other content */
+}
+/* Active class to slide in */
+.menu-overlay.active {
+    right: 0; /* Slide in */
+}
